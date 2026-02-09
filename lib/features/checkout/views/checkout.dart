@@ -46,7 +46,7 @@ class _CheckoutState extends State<Checkout> {
                   ),
                 ),
                 SizedBox(
-                  width: 0.7.sw,
+                  width:1.sw>600? 0.7.sw:0.9.sw,
                   child: ElevatedButton(
                     onPressed: () {
                       if (currentStep < 2) {

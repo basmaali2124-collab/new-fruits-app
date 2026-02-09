@@ -15,7 +15,6 @@ class More extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // هنا بننشئ ال list جوه build() عشان نقدر نستخدم context
     List<Widget> moreList = [
       ProfileRow(
         prefixIcon: Icons.person_2_outlined,
@@ -93,7 +92,7 @@ class More extends StatelessWidget {
             Text('Welcome, Fruit Market', style: TextStyle(fontSize: 24)),
             SizedBox(height: 20),
             SizedBox(
-              width: 0.7.sw,
+              width:1.sw>600? 0.5.sw:0.9.sw,
               child: ElevatedButton(onPressed: () {}, child: Text('Login')),
             ),
             SizedBox(height: 20),

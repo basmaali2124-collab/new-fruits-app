@@ -23,9 +23,9 @@ class ConfirmedCheckout extends StatelessWidget{
             Text(textAlign: TextAlign.center,'Your order code: #243188',style: TextStyle(color: Color(0xFF656565),fontSize: 20,)),
             Text(textAlign: TextAlign.center,'Thank you for choosing our products!',style: TextStyle(color: Color(0xFF656565),fontSize: 20,)),
             SizedBox(height: 12,),
-            SizedBox(width: 0.7.sw,height: 32,child: ElevatedButton(onPressed: (){navigateTo(context, Home());}, child: Text('Continue Shopping'))),
+            SizedBox( width:1.sw>600? 0.7.sw:0.9.sw,height: 32,child: ElevatedButton(onPressed: (){navigateTo(context, Home());}, child: Text('Continue Shopping'))),
            SizedBox(height: 12,),
-           SizedBox(width: 0.7.sw,height: 32,child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.white,foregroundColor: Color(0xFF204F38),side: BorderSide(color: Color(0xFF204F38))),onPressed: (){navigateTo(context, OrderTracking());}, child: Text('Track Order')))
+           SizedBox( width:1.sw>600? 0.7.sw:0.9.sw,height: 32,child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.white,foregroundColor: Color(0xFF204F38),side: BorderSide(color: Color(0xFF204F38))),onPressed: (){navigateTo(context, OrderTracking());}, child: Text('Track Order')))
            
           ],),
         ),),

@@ -16,7 +16,7 @@ class EnterNumber extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+           padding:  EdgeInsets.symmetric(horizontal: 40.w, vertical: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -29,7 +29,7 @@ class EnterNumber extends StatelessWidget {
               SizedBox(height: 40.h),
               SizedBox(
                 height: 51.h,
-                width: 1.sw,
+                width:1.sw,
                 child: ElevatedButton(
                   onPressed: () {
                    navigateTo(context,EnterOTP()); 

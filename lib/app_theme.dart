@@ -8,7 +8,7 @@ ThemeData appTheme() {
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFF204F38),
         foregroundColor: Colors.white,
-        maximumSize: Size(0.7.sw, 52)
+       // maximumSize: Size(0.7.sw, 52)
       ),
     ),
     

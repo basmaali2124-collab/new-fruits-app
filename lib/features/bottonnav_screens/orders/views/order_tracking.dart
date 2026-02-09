@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_app/Shared_widget/custom_appbar.dart';
@@ -12,7 +13,7 @@ class OrderTracking extends StatelessWidget {
       appBar: CustomAppBar(title: 'Order Tracking'),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+           padding:  EdgeInsets.symmetric(horizontal:1.sw>600? 40.w:20, vertical: 20),
           child: Column(
             children: [
               Row(
@@ -50,19 +51,21 @@ class OrderTracking extends StatelessWidget {
                       SizedBox(height: 80.h),
                       BoldText(text: 'Order Place',),
                       NormalText(text: 'We have received your order',),
-                      //SizedBox(height: 20),
+                     
                      ],
                   ),
                 ],
               ),
 
               SizedBox(
-                width: 0.7.sw,
+                  height: 51.h,
+                width: 1.sw,
                 child: ElevatedButton(onPressed: () {}, child: Text('Confirm')),
               ),
               SizedBox(height: 8),
               SizedBox(
-                width: 0.7.sw,
+                height: 51.h,
+                width: 1.sw,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFFFF4A4A),
@@ -93,7 +96,7 @@ class NormalText extends StatelessWidget {
 final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: TextStyle(fontSize: 18,color: Color(0xFF656565)),
+    return AutoSizeText(maxFontSize:20 ,text,style: TextStyle(fontSize: 18.sp,color: Color(0xFF656565)),
                         );
   }
 }
@@ -105,9 +108,9 @@ class BoldText extends StatelessWidget {
 final String text;
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return  AutoSizeText(maxFontSize:24,
       text,
-      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21,color: Color(0xFF292727)),
+      style: TextStyle(fontWeight: FontWeight.bold,fontSize: 21.sp,color: Color(0xFF292727)),
     );
   }
 }

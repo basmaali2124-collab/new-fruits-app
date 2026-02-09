@@ -33,33 +33,35 @@ class _OnboardingState extends State<Onboarding> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 if (!isLast) SkipWidget(),
-                SizedBox(
-                  height: 442.h,
-                  child: PageView(
-                     physics: NeverScrollableScrollPhysics(),
-                    controller: pageController,
-                    onPageChanged: (index) {
-                      setState(() {
-                        isLast = index == 2;
-                      });
-                    },
-                    children: [
-                      MyPageView(
-                        boldText: 'E shopping',
-                        normalText: 'Explore op organic fruits & grab them',
-                        pageController: pageController,
-                      ),
-                      MyPageView(
-                        boldText: 'Delivery Arrived',
-                        normalText: 'Order is arrived ot your place',
-                        pageController: pageController,
-                      ),
-                      MyPageView(
-                        boldText: 'Delivery Arrived',
-                        normalText: 'Order is arrived ot your place',
-                        pageController: pageController,
-                      ),
-                    ],
+                Center(
+                  child: SizedBox(
+                    height: 442.h,
+                    child: PageView(
+                       physics: NeverScrollableScrollPhysics(),
+                      controller: pageController,
+                      onPageChanged: (index) {
+                        setState(() {
+                          isLast = index == 2;
+                        });
+                      },
+                      children: [
+                        MyPageView(
+                          boldText: 'E shopping',
+                          normalText: 'Explore op organic fruits & grab them',
+                          pageController: pageController,
+                        ),
+                        MyPageView(
+                          boldText: 'Delivery Arrived',
+                          normalText: 'Order is arrived ot your place',
+                          pageController: pageController,
+                        ),
+                        MyPageView(
+                          boldText: 'Delivery Arrived',
+                          normalText: 'Order is arrived ot your place',
+                          pageController: pageController,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 MySmoothPageIndicator(

@@ -63,7 +63,6 @@ class _ProductDetailsState extends State<ProductDetails> {
         title: widget.product.name,
         product: widget.product,
       ),
-    //  bottomNavigationBar: 
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -87,10 +86,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
               const SizedBox(height: 12),
-              // Product Details
               Details(product: widget.product),
               const SizedBox(height: 20),
-              // Responsive layout for options
               LayoutBuilder(
                 builder: (context, constraints) {
                   int columns = constraints.maxWidth > 600 ? 2 : 1;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_app/features/bottonnav_screens/home/widgets/filter_widgets/checkbox_function.dart';
 
 class SetLanguage extends StatefulWidget {
@@ -40,12 +41,9 @@ class _SetLanguageState extends State<SetLanguage> {
             });
           },
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+        SizedBox( width:224.w,
           child: ElevatedButton(
             onPressed: () {
-              // هنا تقدري تبعتي اللغة المختارة
-              // print(selectedLanguage);
               Navigator.of(context).pop(selectedLanguage);
             },
             child: const Text('Apply'),

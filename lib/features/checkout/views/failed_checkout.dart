@@ -30,7 +30,7 @@ class FailedCheckout extends StatelessWidget {
               ),
               SizedBox(height: 24),
               SizedBox(
-                width: 0.7.sw,
+                width:1.sw>600? 0.7.sw:0.9.sw,
                 height: 32,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
