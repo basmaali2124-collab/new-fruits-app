@@ -62,8 +62,8 @@ class Signup extends StatelessWidget {
                 normalText: "Already have an account? ",
                 buttonText: "Login",
                 onPressed: () {
-                  navigateTo(context, Login());
-                },
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Login()));
+              },
               ),
             ],
           ),

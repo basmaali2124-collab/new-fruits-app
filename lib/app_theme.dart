@@ -4,11 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 ThemeData appTheme() {
   return ThemeData(
     scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      surfaceTintColor: Colors.transparent,
+    ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xFF204F38),
         foregroundColor: Colors.white,
-       // maximumSize: Size(0.7.sw, 52)
+     
       ),
     ),
     

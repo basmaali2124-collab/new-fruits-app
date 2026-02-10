@@ -78,8 +78,10 @@ class Login extends StatelessWidget {
               Custom2TextType(
                 normalText: "Don't have an account? ",
                 buttonText: "Sign up",
-                onPressed: () {
-                  navigateTo(context,Signup());},
+                onPressed: () {  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=>Signup()));
+               
+                //  navigateTo(context,Signup());
+                },
               ),
             ],
           ),

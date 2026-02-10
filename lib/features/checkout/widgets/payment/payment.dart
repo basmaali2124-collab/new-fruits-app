@@ -37,7 +37,6 @@ class _PaymentState extends State<Payment> {
           ),
         ),
 
-        // Order Details
         SizedBox(height: 16),
         Text('Order Details', style: TextStyle(fontWeight: FontWeight.bold)),
         Card(
@@ -48,7 +47,6 @@ class _PaymentState extends State<Payment> {
           ),
         ),
 
-        // Payment Options
         SizedBox(height: 16),
         Text('Payment', style: TextStyle(fontWeight: FontWeight.bold)),
         SizedBox(height: 8),

@@ -8,19 +8,35 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
 class AppLayout extends StatefulWidget {
   const AppLayout({super.key});
+  static late PersistentTabController controller;
   @override
   State<AppLayout> createState() => _AppLayoutState();
 }
 class _AppLayoutState extends State<AppLayout> {
-  List<Widget> _buildScreens() {
-    return [Home(), Orders(), Basket(), Favourite(), More()];
+
+  @override
+  void initState() {
+    super.initState();
+    AppLayout.controller = PersistentTabController(initialIndex: 0);
   }
+
+  List<Widget> _buildScreens() {
+    return [
+      Home(),
+      Orders(),
+      Basket(),
+      Favourite(),
+      More(), 
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
       context,
+      controller: AppLayout.controller, 
       screens: _buildScreens(),
-      backgroundColor: Color(0xFF204F38),
+      backgroundColor: const Color(0xFF204F38),
       decoration: NavBarDecoration(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(32),
@@ -43,9 +59,9 @@ class _AppLayoutState extends State<AppLayout> {
     return PersistentBottomNavBarItem(
       icon: Icon(icon),
       title: title,
-      textStyle: TextStyle(fontWeight: FontWeight.bold),
+      textStyle: const TextStyle(fontWeight: FontWeight.bold),
       activeColorPrimary: Colors.white,
-      activeColorSecondary: Color(0xFF204F38),
+      activeColorSecondary: const Color(0xFF204F38),
       inactiveColorPrimary: Colors.white,
       inactiveColorSecondary: Colors.white,
     );

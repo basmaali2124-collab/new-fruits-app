@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fruits_app/Shared_widget/custom_appbar.dart';
-import 'package:fruits_app/features/bottonnav_screens/Favourite/views/favourite.dart';
+import 'package:fruits_app/features/bottonnav_screens/app_layout.dart';
+import 'package:fruits_app/features/bottonnav_screens/more/widgets/profile_row.dart';
+import 'package:fruits_app/features/bottonnav_screens/more/widgets/set_language.dart';
 import 'package:fruits_app/features/bottonnav_screens/more/views/contact_us.dart';
 import 'package:fruits_app/features/bottonnav_screens/more/views/terms_and_conditions.dart';
 import 'package:fruits_app/features/bottonnav_screens/more/views/update_profile.dart';
-import 'package:fruits_app/features/bottonnav_screens/more/widgets/profile_row.dart';
-import 'package:fruits_app/features/bottonnav_screens/more/widgets/set_language.dart';
-import 'package:fruits_app/features/bottonnav_screens/orders/views/orders.dart';
 import 'package:fruits_app/features/intro/widgets/navigation_function.dart';
 
 class More extends StatelessWidget {
-  More({super.key});
+ const More({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,14 +26,14 @@ class More extends StatelessWidget {
         prefixIcon: Icons.list,
         rowName: 'My Orders',
         onPressed: () {
-          navigateTo(context, Orders());
+          AppLayout.controller.jumpToTab(1);
         },
       ),
       ProfileRow(
         prefixIcon: Icons.favorite_border_outlined,
         rowName: 'Favourite',
         onPressed: () {
-          navigateTo(context, Favourite());
+          AppLayout.controller.jumpToTab(3);
         },
       ),
       ProfileRow(
@@ -53,14 +52,14 @@ class More extends StatelessWidget {
         prefixIcon: Icons.headphones_outlined,
         rowName: 'Support',
         onPressed: () {
-          navigateTo(context, ContactUs());
+         navigateTo(context,ContactUs());
         },
       ),
       ProfileRow(
         prefixIcon: Icons.diamond,
         rowName: 'Terms & Condition',
         onPressed: () {
-          navigateTo(context, TermsAndConditions());
+         navigateTo(context, TermsAndConditions());
         },
       ),
       ProfileRow(
@@ -89,10 +88,11 @@ class More extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8),
-            Text('Welcome, Fruit Market', style: TextStyle(fontSize: 24)),
+            Text('Welcome, Fruit Market',
+                style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.w600)),
             SizedBox(height: 20),
             SizedBox(
-              width:1.sw>600? 0.5.sw:0.9.sw,
+              width: 1.sw > 600 ? 0.5.sw : 0.9.sw,
               child: ElevatedButton(onPressed: () {}, child: Text('Login')),
             ),
             SizedBox(height: 20),
@@ -106,12 +106,7 @@ class More extends StatelessWidget {
                   spacing: 10,
                   runSpacing: 10,
                   children: moreList
-                      .map(
-                        (row) => SizedBox(
-                          width: itemWidth,
-                          child: row,
-                        ),
-                      )
+                      .map((row) => SizedBox(width: itemWidth, child: row))
                       .toList(),
                 );
               },
